@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+p {
+    font-weight: 300;
+    color: #1111;
+}
+
+                            /* Header */
+        
+header {
+    position: fixed;
+    top: 0;
+    
+}
