@@ -79,7 +79,7 @@ header .nav-bar li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(images/img\(1\).jpg);
+    background-image: url("images/../../assets/images/img\(1\).jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
