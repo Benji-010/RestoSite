@@ -2,13 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
 
 p {
     font-weight: 300;
     color: #111;
+}
+
+section {
+    scroll-margin-top: 80px;
 }
                             /* Home page */
                             /* Header */
@@ -24,6 +28,11 @@ header {
     justify-content: space-evenly;
     align-items: center;
     transition: 0.5s;
+}
+
+header.scrolled {
+    background: rgba(17, 17, 17, 0.95);
+    padding: 12px 10px;
 }
 
 .logo {
@@ -53,6 +62,37 @@ header {
     font-weight: 700;
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 .btn-reserve {
     padding: 10px 20px;
     background: #fb911f;
@@ -62,7 +102,11 @@ header {
 
 .btn-reserve:hover {
     background: #d87710;
-    transition: ease-out;
+    transition: 0.3s ease-out;
+}
+
+header .nav-bar .btn-reserve:hover {
+    color: #fff;
 }
 
 header .nav-bar li a:hover {
@@ -79,7 +123,9 @@ header .nav-bar li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("images/../../assets/images/img\(1\).jpg");
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../assets/images/hero.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -160,14 +206,14 @@ section {
 .title-text {
     color: #000;
     font-size: 2em;
-    font-weight: 300px;
+    font-weight: 300;
     text-transform: capitalize;
 }
 
 .title-text span {
     color: #fb911f;
     font-size: 1.5em;
-    font-weight: 700px;
+    font-weight: 700;
 }
 
 .div-about .div-text-img img {
@@ -225,10 +271,180 @@ section {
 
 .menu .contenus .box .text {
     text-align: center;
-    font-weight: 300px;
+    font-weight: 300;
     color: #111;
 }
 
 .menu .contenus .box .text h3 {
     font-weight: 400;
+}
+
+                            /* Responsive */
+                            /* TABLETTE ET MOINS */
+                
+@media (max-width: 992px) {
+    /* Header et menu burger */
+
+    header {
+        justify-content: space-between;
+        padding: 15px 25px;
+    }
+
+    header.scrolled {
+        padding: 10px 25px;
+    }
+
+    .logo {
+        font-size: 1.7em;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-bar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(17, 17, 17, 0.97);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+    .nav-bar.active {
+        max-height: 500px;
+    }
+
+    .nav-bar li {
+        width: 100%;
+    }
+
+    .nav-bar a {
+        display: block;
+        margin-left: 0;
+        padding: 14px 25px;
+        text-align: center;
+    }
+
+    .nav-bar .btn-reserve {
+        margin: 10px 25px 20px;
+        padding: 12px 20px;
+    }
+
+                            /* Sections */
+    section {
+        padding: 70px 30px;
+    }
+
+                            /* Hero */
+    .presentation .contenu {
+        max-width: 85%;
+    }
+
+    .presentation .contenu h2 {
+        font-size: 2.5rem;
+    }
+
+    .contenu p:nth-child(2) {
+        font-size: 1.1em;
+    }
+
+    /* About */
+    .about {
+        padding-bottom: 30px;
+    }
+
+    .div-about {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .div-about .div-text-img {
+        width: 100%;
+    }
+
+    .div-about .div-text-img img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+
+    /* Menu : 2 cartes par ligne */
+    .menu {
+        margin-top: 0;
+    }
+
+    .menu .contenus .box {
+        width: calc(50% - 44px);
+        margin: 20px;
+        border-width: 14px;
+        box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .menu .contenus .box .img-menu,
+    .menu .contenus .img-menu img {
+        height: 240px;
+    }
+}
+
+/* SMARTPHONE (jusqu'à 600px) */
+@media (max-width: 600px) {
+
+    header {
+        padding: 12px 20px;
+    }
+
+    header.scrolled {
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 1.5em;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    .presentation .contenu {
+        max-width: 100%;
+    }
+
+    .presentation .contenu h2 {
+        font-size: 2rem;
+    }
+
+    .contenu p:nth-child(2) {
+        font-size: 1em;
+    }
+
+    .btn1,
+    .btn2 {
+        padding: 10px 16px;
+        font-size: 0.9em;
+        margin: 15px 5px 0;
+    }
+
+    .title-text {
+        font-size: 1.7em;
+    }
+
+    .div-about .div-text-img img {
+        height: 260px;
+    }
+
+    /* Menu : 1 carte par ligne */
+    .menu .contenus .box {
+        width: 100%;
+        max-width: 340px;
+        margin: 15px 0;
+    }
+
+    .menu .contenus .box .img-menu,
+    .menu .contenus .img-menu img {
+        height: 220px;
+    }
 }
