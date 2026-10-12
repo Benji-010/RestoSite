@@ -279,6 +279,235 @@ section {
     font-weight: 400;
 }
 
+                         /* Menu : description et prix */
+
+.menu .contenus .box .text {
+    padding: 12px 5px 5px;
+}
+
+.plat-desc {
+    font-size: 0.85em;
+    margin-top: 6px;
+}
+
+.price {
+    display: block;
+    margin-top: 8px;
+    font-weight: 600;
+    color: #fb911f;
+}
+
+                            /* Titres centrés des nouvelles sections */
+.testimonies .div-menu,
+.reservation .div-menu,
+.contact .div-menu {
+    text-align: center;
+}
+
+
+                            /* Testimonies */
+.testimonies {
+    background: #f7f7f7;
+}
+
+.contenus-testi {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testi-card {
+    width: 320px;
+    background: #fff;
+    padding: 30px;
+    border-top: 4px solid #fb911f;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.testi-card p {
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.testi-card h4 {
+    font-weight: 600;
+}
+
+.testi-card span {
+    font-size: 0.85em;
+    color: #777;
+}
+
+                            /* Reservation */
+.reservation-form {
+    max-width: 700px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.field input:focus,
+.field textarea:focus {
+    outline: none;
+    border-color: #fb911f;
+}
+
+.field-full {
+    grid-column: 1 / -1;
+}
+
+.reservation-form .btn1 {
+    grid-column: 1 / -1;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+                            /* Contact */
+.contact-wrapper {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-infos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-item h3 {
+    color: #fb911f;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.info-item a {
+    color: #111;
+    text-decoration: none;
+}
+
+.contact-map {
+    flex: 1.3;
+    min-height: 320px;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    border: 0;
+}
+
+                            /* Footer */
+ footer {
+    background: #111;
+    padding: 50px 100px 90px;
+ }
+
+ .footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+ }
+
+ footer p {
+    color: #ccc;
+    margin-top: 10px;
+ }
+
+ .footer-links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 20px;
+    list-style: none;
+ }
+
+ .footer-links li {
+    margin-bottom: 10px;
+ }
+
+ .footer-links a {
+    color: #fff;
+    text-decoration: none;
+ }
+
+ .footer-links a:hover {
+    color: #fb911f;
+ }
+
+ .socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+ }
+ .socials a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #222;
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: 0.3s;
+ }
+
+ .socials a:hover {
+    background: #fb911f;
+    transform: translateY(-3px);
+ }
+ 
+ .copyright {
+    text-align: center;
+    font-size: 0.85em;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+ }
+
+                            /* Bouton WhatsApp flottant */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 2;
+    background: #25d366;
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px);
+}
                             /* Responsive */
                             /* TABLETTE ET MOINS */
                 
@@ -388,6 +617,10 @@ section {
     .menu .contenus .img-menu img {
         height: 240px;
     }
+
+    footer {
+        padding: 50px 30px 90px;
+    }
 }
 
 /* SMARTPHONE (jusqu'à 600px) */
@@ -447,4 +680,60 @@ section {
     .menu .contenus .img-menu img {
         height: 220px;
     }
+
+    @media (max-width: 992px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    footer {
+        padding: 50px 30px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .reservation-form {
+        grid-template-columns: 1fr;
+    }
+
+    .testi-card {
+        width: 100%;
+    }
+
+    .contact-map,
+    .contact-map iframe {
+        min-height: 260px;
+    }
+
+    footer {
+        padding: 40px 20px 90px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .socials {
+        justify-content: center;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 22px;
+    }
+
+    .footer-links li {
+        margin-bottom: 0;
+    }
+
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px 16px;
+    }
+}
 }
