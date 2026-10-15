@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" alt="crossorigin">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Resto</title>
@@ -22,7 +22,7 @@
             <li><a href="#reservation" class="btn-reserve">Reservation</a></li>
         </ul>
 
-        <button class="menu-toggle" aria-label="Ouvrir le menu en responsive" aria-expanded="false">
+        <button class="menu-toggle" aria-label="Open menu in responsive mode" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -31,7 +31,7 @@
 
 <section class="presentation" id="presentation">
     <div class="contenu">
-        <h2>Just Delicious Dishes</h2>
+        <h1>Just Delicious Dishes</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo cumque libero repellendus enim soluta atque animi voluptates vero sit eos, vel sapiente repudiandae, eum optio, ut impedit molestiae suscipit iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ratione vitae sed a numquam aliquid.</p>
         <a href="#menu" class="btn1">Menu</a>
         <a href="#reservation" class="btn2">Reservation</a>
@@ -121,7 +121,7 @@
                 <span class="price">00.00 $</span>          
             </div>
             </div>
-         <div class="box">
+         <div class="box extra">
             <div class="img-menu">
                <img src="assets/images/brochette.jpg" alt="Menu special Brochette">
             </div>
@@ -131,7 +131,7 @@
                 <span class="price">00.00 $</span>
             </div> 
          </div>
-            <div class="box">
+            <div class="box extra">
             <div class="img-menu">
                 <img src="assets/images/steak.jpg" alt="Menu special Steak">
             </div>
@@ -143,29 +143,29 @@
          </div>
     </div>
     <div class="div-menu">
-        <a href="#" class="btn1">See more</a>
+        <a href="#" class="btn1" id="see-more" aria-expanded="false">See more</a>
     </div>
 </section>
 
-<section class="testiomonies" id="testimonies">
+<section class="testimonies" id="testimonies">
     <div class="div-menu">
         <h2 class="title-text"><span>T</span>estimonies</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="contenus-testi">
         <div class="testi-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Nemo cumque libero repellendus."</p>
-            <h4>Client Name</h4>
+            <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit.  Nemo cumque libero repellendus."</p>
+            <h4>John Doe</h4>
             <span>Customer</span>
         </div>
         <div class="testi-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Nemo cumque libero repellendus."</p>
-            <h4>Client Name</h4>
+            <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit.  Nemo cumque libero repellendus."</p>
+            <h4>Eve Smith</h4>
             <span>Customer</span>
         </div>
         <div class="testi-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Nemo cumque libero repellendus."</p>
-            <h4>Client Name</h4>
+            <p>" Lorem ipsum dolor sit amet consectetur adipisicing elit.  Nemo cumque libero repellendus."</p>
+            <h4>Elisabeth Johnson</h4>
             <span>Customer</span>
         </div>
     </div>
@@ -193,7 +193,7 @@
             <label for="res-time">Time</label>
             <input type="time" id="res-time" required>
         </div>
-        <div class="field_full">
+        <div class="field field-full">
             <label for="res-notes">Message</label>
             <textarea id="res-notes" rows="4"></textarea>
         </div>
@@ -209,17 +209,19 @@
     <div class="contact-wrapper">
         <div class="contact-infos">
             <div class="info-item">
-                <h3>Adress</h3>
-                <p>00 Lorem Street, Ipsum City</p>
+                <h3>Address</h3>
+                <p id="info-address">00 Lorem Street, Ipsum City</p>
             </div>
             <div class="info-item">
                 <h3>Opening hours</h3>
+                <div id="info-hours">
                 <p>Mon - Fri : 08:30 - 22:00</p>
                 <p>Sat - Sun : 08:30 - 00:00</p>
+                </div>
             </div>
             <div class="info-item">
                 <h3>Phone</h3>
-                <p><a href="tel:+243848687404">+242 848 687 404</a></p>
+                <p><a href="#" id="info-phone">+243 848 687 404</a></p>
             </div>
             <div class="info-item">
                 <h3>Email</h3>
@@ -227,7 +229,7 @@
             </div>
         </div>
         <div class="contact-map">
-            <iframe src="" loading="lazy" title="Restaurant location"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1989.250416586387!2d15.285696819652573!3d-4.3165700061601475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a6a33dc321ff19f%3A0x5274b7114f0562e5!2sRestaurant%20Chez%20Beki!5e0!3m2!1sfr!2scd!4v1792063575081!5m2!1sfr!2scd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Restaurant location"></iframe>
         </div>
     </div>
 </section>
@@ -240,7 +242,7 @@
             </div>
             <div class="socials">
             <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
+                <i class="fa-brands fa-instagram"></i>
             </a>
             <a href="#" target="_blank" rel="noopener" aria-label="TikTok">
                 <i class="fa-brands fa-tiktok"></i>
@@ -262,6 +264,7 @@
     </footer>
     <a href="#" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
 
+<script src="js/config.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
