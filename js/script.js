@@ -80,3 +80,48 @@ reservationForm.addEventListener('submit', (e) => {
     const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 });
+
+// Remplissage du site depuis la config
+
+document.title = CONFIG.name;
+
+// Logos (header et footer)
+
+document.querySelectorAll('.logo').forEach(logo => {
+    logo.innerHTML = `<span>${CONFIG.name.charAt(0)}</span>${CONFIG.name.slice(1)}`;
+});
+
+// Contact
+
+document.getElementById('info-address').textContent = CONFIG.address;
+
+const hoursBox = document.getElementById('info-hours');
+hoursBox.innerHTML = '';
+CONFIG.hours.forEach(line => {
+    const p = document.createElement('p');
+    p.textContent = line;
+    hoursBox.appendChild(p);
+});
+
+const phoneLink = document.getElementById('info-phone');
+phoneLink.textContent = CONFIG.phone;
+phoneLink.href = 'tel:' + CONFIG.phone.replace(/[^\d+]/g, '');
+
+const emailLink = document.getElementById('info-email');
+emailLink.textContent = CONFIG.email;
+emailLink.href = 'mailto:' + CONFIG.email;
+
+// Carte
+
+document.getElementById('map-frame').src = CONFIG.mapUrl;
+
+// Réseaux sociaux
+
+document.querySelectorAll('[data-social]').forEach(link => {
+    link.href = CONFIG.socials[link.dataset.social] || '#';
+});
+
+// Copyright
+
+document.getElementById('copyright').textContent =
+    `© ${new Date().getFullYear()} ${CONFIG.name}. All rights reserved.`; 
