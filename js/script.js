@@ -27,6 +27,28 @@ navBar.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
 });
 
+// Liste des plats du menu
+
+const menuContainer = document.querySelector('.menu .contenus');
+const VISIBLE_DISHES = 6;
+
+menuContainer.innerHTML = CONFIG.menu.map((dish, index) => `
+<div class="box${index >= VISIBLE_DISHES ? ' extra' : ''}">
+    <div class="img-menu">
+        <img src="${dish.image}" alt="${dish.name}" loading="lazy">
+    </div>
+    <div class="text">
+        <h3>${dish.name}</h3>
+        <p class="plat-desc">${dish.description}</p>
+        <span class="price">${dish.price} ${CONFIG.currency}</span>
+    </div>
+</div>
+`).join('');
+
+if (CONFIG.menu.length <= VISIBLE_DISHES) {
+    document.getElementById('see-more').parentElement.style.display = 'none';
+}
+
 // Bouton See more (menu)
 
 const seeMoreBtn = document.getElementById('see-more');
